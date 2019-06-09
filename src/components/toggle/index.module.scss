@@ -1,0 +1,34 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  border-radius: 24px;
+  transition: all 0.3s;
+  background: url("../../../content/assets/moon.png") 5px center/17px 17px
+      no-repeat,
+    url("../../../content/assets/sun.png") 28px center/17px 17px no-repeat
+      #0f1114;
+}
+input.offscreen[type="checkbox"]:focus + .switch:after {
+  box-shadow: 0 0 2px 3px var(--textLink);
+}
+.switch::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  background-color: #fafafa;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+input.offscreen[type="checkbox"]:checked + .switch::after {
+  transform: translateX(26px);
+}
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
